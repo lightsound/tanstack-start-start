@@ -9,12 +9,11 @@
   ],
   "files.readonlyInclude": {
     "bun.lock": true,
-    "**/routeTree.gen.ts": true
+    "**/routeTree.gen.ts": true,
+    "**/*.md": true
   },
   "cSpell.ignorePaths": ["bun.lock", "**/routeTree.gen.ts"],
   "cSpell.words": [
-    "dotenv",
-    "eslintcache",
     "oxfmt",
     "oxfmtrc",
     "oxlint",
