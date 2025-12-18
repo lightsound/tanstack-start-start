@@ -12,7 +12,16 @@
     "**/routeTree.gen.ts": true
   },
   "cSpell.ignorePaths": ["bun.lock", "**/routeTree.gen.ts"],
-  "cSpell.words": ["dotenv", "eslintcache", "oxfmt", "oxfmtrc", "oxlint", "tsgo", "tsgolint"],
+  "cSpell.words": [
+    "dotenv",
+    "eslintcache",
+    "oxfmt",
+    "oxfmtrc",
+    "oxlint",
+    "oxlintrc",
+    "tsgo",
+    "tsgolint"
+  ],
 
   // oxc
   "oxc.enable": true,
