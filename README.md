@@ -6,15 +6,16 @@ A minimal starter template for [TanStack Start](https://tanstack.com/start) — 
 
 This starter leverages cutting-edge tools with a minimal configuration:
 
-| Category | Technology | Version |
-|----------|------------|---------|
-| Framework | [TanStack Start](https://tanstack.com/start) | Latest |
-| Styling | [Tailwind CSS](https://tailwindcss.com/) | 4 |
-| Language | [TypeScript Native](https://devblogs.microsoft.com/typescript/typescript-native-port/) | 7 Preview |
-| Build Tool | [Vite](https://vite.dev/) | 8 Beta |
-| Linter | [oxlint](https://oxc.rs/docs/guide/usage/linter) | Latest |
-| Formatter | [oxfmt](https://oxc.rs/docs/guide/usage/formatter) | Latest |
-| Runtime | [Bun](https://bun.sh/) | Latest |
+| Category   | Technology                                                                             | Version   |
+| ---------- | -------------------------------------------------------------------------------------- | --------- |
+| Framework  | [TanStack Start](https://tanstack.com/start)                                           | Latest    |
+| Styling    | [Tailwind CSS](https://tailwindcss.com/)                                               | 4         |
+| Language   | [TypeScript Native](https://devblogs.microsoft.com/typescript/typescript-native-port/) | 7 Preview |
+| Build Tool | [Vite](https://vite.dev/)                                                              | 8 Beta    |
+| Linter     | [oxlint](https://oxc.rs/docs/guide/usage/linter)                                       | Latest    |
+| Formatter  | [oxfmt](https://oxc.rs/docs/guide/usage/formatter)                                     | Latest    |
+| Git Hooks  | [Lefthook](https://github.com/evilmartians/lefthook)                                   | Latest    |
+| Runtime    | [Bun](https://bun.sh/)                                                                 | Latest    |
 
 ## Getting Started
 
@@ -32,19 +33,22 @@ cd tanstack-start-start
 # Install dependencies
 bun install
 
+# Setup git hooks
+bunx lefthook install
+
 # Start development server
 bun run dev
 ```
 
 ## Scripts
 
-| Command | Description |
-|---------|-------------|
-| `bun run dev` | Start development server |
-| `bun run build` | Build for production |
-| `bun run start` | Preview production build |
-| `bun run check` | Run linter and formatter check |
-| `bun run fix` | Auto-fix lint issues and format code |
+| Command         | Description                          |
+| --------------- | ------------------------------------ |
+| `bun run dev`   | Start development server             |
+| `bun run build` | Build for production                 |
+| `bun run start` | Preview production build             |
+| `bun run check` | Run linter and formatter check       |
+| `bun run fix`   | Auto-fix lint issues and format code |
 
 ## VS Code Configuration
 
@@ -67,3 +71,24 @@ The included `.vscode/settings.json` provides the following configurations:
 This starter intentionally uses **strict oxlint rules** with all categories set to `error`. This is designed to encourage best practices and catch potential issues early. Feel free to adjust these rules according to your project's needs by modifying `.oxlintrc.json`.
 
 Additionally, oxlint is configured to perform **type checking** alongside linting, providing comprehensive code analysis in a single tool.
+
+## Git Hooks with Lefthook
+
+This starter uses [Lefthook](https://github.com/evilmartians/lefthook) for managing git hooks:
+
+- **pre-commit**: Runs linting and format check on staged files (fast)
+- **pre-push**: Runs the full `check` script before pushing (complete)
+
+To install the hooks after cloning:
+
+```bash
+bunx lefthook install
+```
+
+## Developer Tools
+
+In development mode, this starter includes [TanStack Router DevTools](https://tanstack.com/router/latest/docs/framework/react/devtools) for debugging routes and navigation. The DevTools panel appears in the bottom-right corner of your application.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.

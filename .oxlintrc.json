@@ -2,6 +2,10 @@
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "ignorePatterns": ["**/routeTree.gen.ts"],
   "plugins": ["react", "react-perf", "import", "jsx-a11y", "promise"],
+  "env": {
+    "node": true,
+    "browser": true
+  },
   "categories": {
     "correctness": "error",
     "perf": "error",
@@ -12,6 +16,8 @@
     "nursery": "error"
   },
   "rules": {
+    "no-ternary": "off",
+    "no-magic-numbers": "off",
     "explicit-module-boundary-types": "off",
     "explicit-function-return-type": "off",
     "jsx-filename-extension": "off",
@@ -21,7 +27,11 @@
     "exports-last": "off",
     "no-named-export": "off",
     "no-default-export": "error",
-    "prefer-default-export": "off"
+    "prefer-default-export": "off",
+    "consistent-type-specifier-style": "off",
+    "max-dependencies": "off",
+    "max-lines-per-function": "off",
+    "jsx-no-new-function-as-prop": "off"
   },
   "overrides": [
     {
