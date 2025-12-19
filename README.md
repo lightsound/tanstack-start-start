@@ -65,9 +65,21 @@ The included `.vscode/settings.json` provides the following configurations:
 
 ## About oxlint Configuration
 
-This starter intentionally uses **strict oxlint rules** with all categories set to `error`. This is designed to encourage best practices and catch potential issues early. Feel free to adjust these rules according to your project's needs by modifying `.oxlintrc.json`.
+This starter uses **minimal oxlint rules** with only the `correctness` category enabled. This catches obvious bugs without being intrusive, allowing you to customize the rules according to your project's needs.
 
-Additionally, oxlint is configured to perform **type checking** alongside linting, providing comprehensive code analysis in a single tool.
+You can make the linting stricter by adding more categories to `.oxlintrc.json`:
+
+```json
+{
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn",
+    "perf": "warn"
+  }
+}
+```
+
+Available categories: `correctness`, `suspicious`, `perf`, `style`, `pedantic`, `restriction`, `nursery`
 
 ## Git Hooks with Lefthook
 

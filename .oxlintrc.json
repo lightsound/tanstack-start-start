@@ -7,31 +7,10 @@
     "browser": true
   },
   "categories": {
-    "correctness": "error",
-    "perf": "error",
-    "restriction": "error",
-    "suspicious": "error",
-    "pedantic": "error",
-    "style": "error",
-    "nursery": "error"
+    "correctness": "error"
   },
   "rules": {
-    "no-ternary": "off",
-    "no-magic-numbers": "off",
-    "explicit-module-boundary-types": "off",
-    "explicit-function-return-type": "off",
-    "jsx-filename-extension": "off",
-    "react-in-jsx-scope": "off",
-    "arrow-body-style": "off",
-    "func-style": "off",
-    "exports-last": "off",
-    "no-named-export": "off",
-    "no-default-export": "error",
-    "prefer-default-export": "off",
-    "consistent-type-specifier-style": "off",
-    "max-dependencies": "off",
-    "max-lines-per-function": "off",
-    "jsx-no-new-function-as-prop": "off"
+    "no-default-export": "error"
   },
   "overrides": [
     {
