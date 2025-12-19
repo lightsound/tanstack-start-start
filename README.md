@@ -30,11 +30,8 @@ This starter leverages cutting-edge tools with a minimal configuration:
 git clone https://github.com/lightsound/tanstack-start-start.git
 cd tanstack-start-start
 
-# Install dependencies
+# Install dependencies (git hooks are automatically set up)
 bun install
-
-# Setup git hooks
-bunx lefthook install
 
 # Start development server
 bun run dev
@@ -79,11 +76,7 @@ This starter uses [Lefthook](https://github.com/evilmartians/lefthook) for manag
 - **pre-commit**: Runs linting and format check on staged files (fast)
 - **pre-push**: Runs the full `check` script before pushing (complete)
 
-To install the hooks after cloning:
-
-```bash
-bunx lefthook install
-```
+Git hooks are automatically installed when you run `bun install`.
 
 ## Developer Tools
 
