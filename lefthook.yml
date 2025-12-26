@@ -2,14 +2,10 @@
 # https://github.com/evilmartians/lefthook
 
 pre-commit:
-  parallel: true
   commands:
-    lint:
-      glob: "*.{js,jsx,ts,tsx}"
-      run: bun run lint -- {staged_files}
-    format:
+    biome:
       glob: "*.{js,jsx,ts,tsx,json,css}"
-      run: bun run fmt -- {staged_files}
+      run: bunx biome check --staged --no-errors-on-unmatched
 
 pre-push:
   commands:
