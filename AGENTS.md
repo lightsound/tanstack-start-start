@@ -22,3 +22,10 @@ Not part of `vp check`. Use `vp run` so installs stay routed through Vite+.
 
 - **Knip** (`vp run knip`) — unused files, dependencies, and exports. Use when trimming deps or refactoring entry points (`knip.config.ts` configures the project).
 - **react-doctor** (`vp run doctor`) — React-focused health checks. The script uses `--no-lint`; keep ordinary linting on `vp lint`.
+
+## Cursor Cloud specific instructions
+
+- **Vite+ must be installed globally** before running any `vp` command. The update script handles this via `curl -fsSL https://vite.plus | bash`. After installation, `source ~/.bashrc` to get `vp` on PATH.
+- **Dev server:** `vp dev` starts TanStack Start's SSR dev server on `http://localhost:5173/`. It renders the full page server-side on first load.
+- **Version alignment:** The local `vite-plus` version must match the global `vp` version for SSR to work correctly. If `vp dev` returns "Cannot GET /" (404) on all routes, run `vp update vite-plus` to align versions, then restart.
+- **No external services needed.** This is a self-contained frontend+SSR app with no database, Docker, or API dependencies.
