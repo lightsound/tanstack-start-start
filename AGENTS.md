@@ -22,3 +22,26 @@ Not part of `vp check`. Use `vp run` so installs stay routed through Vite+.
 
 - **Knip** (`vp run knip`) — unused files, dependencies, and exports. Use when trimming deps or refactoring entry points (`knip.config.ts` configures the project).
 - **react-doctor** (`vp run doctor`) — React-focused health checks. The script uses `--no-lint`; keep ordinary linting on `vp lint`.
+
+## Cursor Cloud specific instructions
+
+### Vite+ CLI on the VM
+
+The global `vp` command is installed via `curl -fsSL https://vite.plus | bash` and lives under `~/.vite-plus/bin`. Ensure that directory is on `PATH` before running `vp` (the installer updates `~/.bashrc`). After `vp install`, you can also use `./node_modules/.bin/vp` from the repo root.
+
+### Services
+
+| Service | Command | Notes |
+|--------|---------|--------|
+| Dev server (required for browser E2E) | `vp dev` | Default URL `http://localhost:5173`. Use `vp dev --host 0.0.0.0` when the app must be reachable outside localhost. |
+| Production preview (optional) | `vp build` then `vp preview` | Same default port as Vite preview. |
+
+No database, Docker Compose, or external APIs. A single Node process is enough.
+
+### Lint / test / build
+
+See the table in [README.md](README.md). Standard workflow: `vp check`, `vp test`, `vp build`. Do not run `pnpm`/`npm`/`yarn` directly for installs.
+
+### Dev server in background
+
+Use a tmux session (e.g. `vite-dev-server`) for long-running `vp dev`, not a one-shot background shell. The home page at `/` is the hello-world demo: red **Hello World!** heading and a **Toggle** button that switches the heading to blue and back.
